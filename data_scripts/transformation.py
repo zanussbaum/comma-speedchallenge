@@ -87,24 +87,3 @@ def run():
 
 if __name__ == '__main__':
     run()
-    #images = sorted(glob.glob('../frames/augmented/*.jpg'))
-    #with open('../frames/augmented_speeds', 'rb') as f:
-    #    speeds = pickle.load(f)
-    #assert len(images) == len(speeds)
-    #
-    #num_images = len(images)
-    #num_added = 1
-    #
-    #for i, image in enumerate(tqdm(images, desc="Balancing")):
-    #    if speeds[i] >= 26:
-    #        orig = read(image)
-    #        for j in range(2):
-    #            tf.keras.preprocessing.image.save_img(
-    #            f'../frames/augmented/frame_{num_images+num_added}.jpg',
-    #                        random_noise(orig))
-    #            num_added += 1
-    #            speeds.append(speeds[i])
-
-    #with open('../frames/augmented_speeds', 'wb') as f:
-    #    pickle.dump(speeds, f)
-    #assert len(speeds) == (len(images) + num_added - 1), f"Num speeds {len(speeds)}, Num Frames {len(images) + num_added - 1}"
