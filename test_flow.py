@@ -6,7 +6,7 @@ from flow import calc_avg_flow
 def test_average_simple():
     flow = np.zeros((5, 5, 3))
 
-    avg = calc_avg_flow(flow)
+    avg = calc_avg_flow(flow, row_stride=1, col_stride=1)
 
     assert np.all(avg == 0)
 
@@ -42,11 +42,3 @@ def test_average_flow():
 
     assert avg.shape == (4, 8, 3)
     assert np.all(avg == .04)
-
-
-def test_odd_shapes():
-    flow = np.zeros((25, 25, 3))
-
-    avg = calc_avg_flow(flow, row_stride=4, col_stride=4)
-
-    assert avg.shape == (6, 6, 3)
