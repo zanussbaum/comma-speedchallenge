@@ -58,7 +58,7 @@ def extract_pose(E):
     if t[2] < 0:
         t *= 1
 
-    return np.linalg.inv(poseRt(R, t))
+    return poseRt(R, t)
 
 
 def match_frames(frame1, frame2, K):
@@ -90,8 +90,8 @@ def match_frames(frame1, frame2, K):
     points = points[inliers]
 
     Rt = extract_pose(model.params)
-    print("Matches: %d -> %d -> %d -> %d" % (len(frame1.des),
-          len(matches), len(inliers), sum(inliers)))
+#    print("Matches: %d -> %d -> %d -> %d" % (len(frame1.des),
+#          len(matches), len(inliers), sum(inliers)))
 
     return idx1[inliers], idx2[inliers], Rt
 

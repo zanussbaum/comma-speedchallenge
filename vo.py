@@ -55,6 +55,7 @@ def capture(video):
         idx1, idx2, Rt = match_frames(f1, f2, K)
 
         f1.pose = np.dot(Rt, f2.pose)
+        print(f1.pose)
 
         points4d = triangulate(f1.pose, f2.pose, f1.kps[idx1], f2.kps[idx2])
         points4d /= points4d[:, 3:]
